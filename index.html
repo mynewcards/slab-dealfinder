@@ -10,24 +10,27 @@
 <body>
     <header>
         <h1>🃏 CardDealFinder</h1>
-        <p>Compare graded card prices across marketplaces and find eBay-beating deals!</p>
+        <p>Compare marketplace listings to eBay's average sold prices from the past 14 days & find deals!</p>
     </header>
 
     <section id="search-section">
         <input type="text" id="search-input" placeholder="Search for a card (e.g., Charizard PSA 10)" />
         <button onclick="searchCard()">Search</button>
         <div id="autocomplete" class="autocomplete"></div>
+        <div id="loading" class="loading" style="display: none;">🔄 Fetching prices...</div>
     </section>
 
     <section id="comparison-section" style="display: none;">
         <h2>Price Comparison for <span id="card-name"></span></h2>
+        <p><em>eBay Avg: Based on sold items in the last 14 days (as of Sep 14, 2025). Links to current marketplace listings.</em></p>
         <table id="price-table">
             <thead>
                 <tr>
                     <th>Platform</th>
-                    <th>Current Price (USD)</th>
+                    <th>Current Listing Price (USD)</th>
                     <th>eBay Avg Sold (Last 14 Days)</th>
-                    <th>Deal?</th>
+                    <th>Deal? (Listing < Avg Sold)</th>
+                    <th>View Listing</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -35,13 +38,13 @@
     </section>
 
     <section id="deals-section">
-        <h2>🔥 New Deals: Cards Cheaper Than eBay</h2>
+        <h2>🔥 New Deals: Listings Cheaper Than eBay 14-Day Avg Sold</h2>
         <div id="deals-list" class="deals-grid"></div>
         <button onclick="refreshDeals()">Refresh Deals</button>
     </section>
 
     <footer>
-        <p>Built with ❤️ for collectors. Data simulated; integrate real APIs for production.</p>
+        <p>Integrates eBay Marketplace Insights API for real 14-day sold averages. Add your eBay AppID in script.js for live data.</p>
     </footer>
 </body>
 </html>
