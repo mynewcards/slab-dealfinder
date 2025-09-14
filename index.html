@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardDealFinder - Compare Graded Card Prices</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>🃏 CardDealFinder</h1>
+        <p>Compare graded card prices across marketplaces and find eBay-beating deals!</p>
+    </header>
+
+    <section id="search-section">
+        <input type="text" id="search-input" placeholder="Search for a card (e.g., Charizard PSA 10)" />
+        <button onclick="searchCard()">Search</button>
+        <div id="autocomplete" class="autocomplete"></div>
+    </section>
+
+    <section id="comparison-section" style="display: none;">
+        <h2>Price Comparison for <span id="card-name"></span></h2>
+        <table id="price-table">
+            <thead>
+                <tr>
+                    <th>Platform</th>
+                    <th>Current Price (USD)</th>
+                    <th>eBay Avg Sold (Last 14 Days)</th>
+                    <th>Deal?</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <section id="deals-section">
+        <h2>🔥 New Deals: Cards Cheaper Than eBay</h2>
+        <div id="deals-list" class="deals-grid"></div>
+        <button onclick="refreshDeals()">Refresh Deals</button>
+    </section>
+
+    <footer>
+        <p>Built with ❤️ for collectors. Data simulated; integrate real APIs for production.</p>
+    </footer>
+</body>
+</html>
